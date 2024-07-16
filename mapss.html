@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="styles.css">
+<style>
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {
+    margin-left: 120px;
+    background-color: black;
+}
+#body {
+    background-color: black;
+}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}
+</style>
+</head>
+<body id="body">
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <!-- Avatar image in top left corner -->
+    <!-- <img src="/w3images/avatar_smoke.jpg" style="width:100%"> -->
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+    </a>
+    <!-- <a href="#resume" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>Resume</p>
+    </a> -->
+    <a href="mapss.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-eye w3-xxlarge"></i>
+        <p>Maps</p>
+    </a>
+    <a href="webapps.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-envelope w3-xxlarge"></i>
+        <p>Web Applications</p>
+    </a>
+    <!-- <a href="#r" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>R Programming</p>
+    </a>
+    <a href="#leaflet" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>R Programming</p>
+    </a> -->
+</nav>
+
+<div class="scroll-container" id="main">
+  <img src="Vincent-Cheruiyot-Passport.jpg" alt="Cinque Terre" width="800"  height="800">
+  <img src="Vincent-Cheruiyot-Passport.jpg" alt="Forest" width="800" height="800">
+  <img src="Vincent-Cheruiyot-Passport.jpg" alt="Northern Lights" width="800" height="800">
+  <img src="Vincent-Cheruiyot-Passport.jpg" alt="Mountains" width="800" height="800s">
+</div>
+<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+</body>
+</html>
