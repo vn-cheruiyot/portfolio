@@ -1,0 +1,2304 @@
+/* ------------------------ Universal Styling below ------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Color Palette */
+:root {
+  --main: #344354; /* background color */
+  --lightmain: #E8EEF4;
+  --alternative: #F4F6F9;
+  --alternative-hover: #d5d7db;
+  --primary: #B8608C;
+  --dark: #2D2D34;
+  --secondary: #6B8199;
+  --accent: #E8DAE1; /* for buttons and pops of color */
+  --accent2: #9E1B70;
+  --accent3: #EAAC8B;
+  --lighttext: #F4F6F9;
+  --darktext: #344354;
+}
+
+/* Backup - TEMPLATE */
+/* :root {
+  --main: #fff; /* background color */
+  /* --alternative: #F3F3F3;
+  --primary: var(--secondary;
+  --secondary: #767171;
+  --accent: #bf443f; /* for buttons and pops of color */
+  /* --lighttext: #fff;
+  --darktext: #242223;
+} */
+/* Main Styling */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: var(--main);
+  transition: all 0.5s ease;
+}
+
+h1{
+  font-size: 55px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 450px) {
+  h1{
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 300px) {
+  h1{
+    font-size: 34px;
+  }
+}
+
+p{
+  font-size: 24px;
+}
+
+img{
+  image-resolution: 300dpi;
+}
+.border-line {
+  padding: 10px;
+  padding-left: 40px;
+  margin-top: -30px;
+  margin-bottom: -30px;
+  border-right: 3px solid var(--darktext);
+}
+/* Navigation Bar Styling */
+.navbar {
+  background-color: var(--main);
+  top: 0px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid var(--main);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  display: inline-block;
+  color: var(--lighttext);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid var(--main);
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: var(--main);
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+/* Hide the link that should open and close the navbar on small screens */
+.navbar .icon {
+  background-color: var(--main);
+  padding: 14px 16px;
+  display: none;
+  padding-right: 45px;
+  padding-top: 0px;
+}
+
+/* When the screen is less than 900 pixels wide, hide all links. Show the link that contains should open and close the navbar (.icon) */
+@media screen and (max-width: 900px) {
+.navbar a {
+  width: 100%;
+  padding: 14px 16px;
+}
+.navbar a:not(:only-child) {
+  display: none;
+  }
+.navbar a.icon {
+  float: right;
+  display: inline-block;
+  color: var(--lighttext);
+  text-align: right;
+  align-items: center;
+  padding: 0px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid var(--main);
+  }
+}
+
+/* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon. This class makes the navbar look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 900px) {
+.navbar.responsive {
+  position: relative;
+  background-color: var(--secondary);
+  border-bottom: 2px solid var(--secondary);
+  display: flex;
+  flex-direction: column;
+}
+.navbar.responsive a.icon {
+  position: absolute;
+  border-bottom: 2px;
+  width: auto;
+  top: 0;
+  right: 0;
+}
+.navbar a:hover {
+  background-color: var(--main);
+  color: var(--accent);
+}
+.navbar.responsive a {
+  float: none;
+  width: auto;
+  border-bottom: 2px solid var(--secondary);
+  background-color: var(--secondary);
+  display: block;
+  }
+  .navbar.responsive a:first-child {
+      order: 2;
+    }
+  .navbar.responsive a:nth-child(2) {
+      order: 3;
+    }
+  .navbar.responsive a:nth-child(3) {
+      order: 4;
+    }
+  .navbar.responsive a:nth-child(4) {
+      order: 5;
+    }
+  .navbar.responsive a:nth-child(5) {
+      order: 6;
+    }
+  .navbar.responsive a:last-child {
+      order: 1;
+    }
+}
+
+/* Button Style */
+.button {
+  border: 1px solid var(--lighttext);
+  border-radius: 10rem;
+  width: 100px;
+  color: var(--lighttext);
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  /* font-size: 16px; */
+  margin: auto;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+/* @media (max-width: 500px) {
+.button {
+  width: 100px;
+ font-size: 14px;
+    }
+} */
+.button:hover {
+  border: 1px solid var(--accent2);
+  background-color: var(--accent2);
+  color: var(--lighttext);
+}
+
+.button_blk {
+  border: 1px solid var(--darktext);
+  border-radius: 10rem;
+  width: 100px;
+  color: var(--darktext);
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  /* font-size: 16px; */
+  margin: 4px 2px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+.button_blk {
+  width: 50px;
+ font-size: 14px;
+    }
+}
+.button_blk:hover {
+  border: 1px solid var(--accent);
+  background-color: var(--accent);
+  color: var(--darktext);
+}
+
+.button_buffer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Scroll Styling */
+.scroll {
+  position: relative;
+}
+scroll::after {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 80%;
+  background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+}
+scroll h1 {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: var(--lighttext);
+  font : normal 300 64px/1 'Josefin Sans', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.demo a {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+
+  color: var(--lighttext);
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.demo a:hover {
+  opacity: .5;
+}
+
+#section05 a {
+  padding-top: 70px;
+}
+#section05 a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid var(--lighttext);
+  border-bottom: 1px solid var(--lighttext);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb05 1.5s infinite;
+  animation: sdb05 1.5s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb05 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+@keyframes sdb05 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+/* Image Credit Styling */
+/* Icon and text */
+.source {
+  position: relative;
+}
+
+.source[data]:after {
+  content: attr(data);
+  padding: 4px 8px;
+  color: rgba(240,240,240,0.9);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  white-space: nowrap;
+  z-index: 2;
+  border-radius: 5px ;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Bullet Point lists */
+/* ul {
+
+  padding: 20px;
+}
+
+ul li {
+
+  margin: 5px;
+} */
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+ul li {
+  /* border-top: 5px solid var(--darktext); /* Add a thin border to each list item */
+  border-bottom: 5px solid var(--darktext); /* Add a thin border to each list item */
+  /* margin-top: -1px; /* Prevent double borders */
+  padding: 10px;
+
+  /* background-color: var(--primary); /* Add a grey background color */
+  padding: 20px; /* Add some padding */
+  font-size: 20px;
+}
+
+ul li:hover{
+  background-color: var(--alternative-hover);
+}
+
+.featured{
+  color: var(--darktext);
+  text-decoration: none;
+}
+.link{
+  color: var(--accent2);
+  text-decoration: none;
+  font-weight: bold;
+}
+.link:hover{
+  text-decoration: underline;
+}
+
+.code-embed{
+  overflow-x: hidden;
+  padding: 20px;
+  justify-content: center;
+  width: 100%
+}
+/* Slider */
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+  width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  background-color: var(--accent2);
+  border-radius: 2px;
+  font-size: 2em;
+  color: white;
+  font-weight: bold; */
+   font-family: 'Baloo Tamma', cursive;
+   padding:10px;
+  /* top: 500px; */
+  /* left: 0px; */
+  /* justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 10%; */
+  /* position: absolute; */
+  bottom: 0%;
+  width: auto;
+  /* padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none; */
+}
+
+/* Position the "next button" to the right */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+/* .prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+} */
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: var(--darktext);
+  font-size: 12px;
+  padding: 0px 0px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.activehover, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+/* Pentagon right arrow styling */
+.pentagon_arrow{
+    margin: 0px;
+    background: url(images/landing_page_v7.png);
+    background-position: left;
+    background-size: cover;
+    width: 800px;
+    height: 600px;
+    position: relative;
+    color: var(--main);
+}
+.pentagon_arrow:before,.pentagon_arrow:after{
+    content: "";
+    position: absolute;
+    color: currentcolor;
+    right: 0;
+    border-left: 300px solid transparent;
+}
+.pentagon_arrow:before{
+    border-bottom: 300px solid currentcolor;
+    bottom: 0;
+}
+.pentagon_arrow:after{
+    border-top: 300px solid currentcolor;
+}
+/* ----------------------- Page Specific Styling below ---------------------- */
+
+/* ---------------------------- Homepage Styling ---------------------------- */
+.banner{
+  width: 100%;
+  height: 700px;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.0)), url(images/web_image_background3.jpg);
+  background-size: cover;
+  background-position: top left;
+}
+
+/* @media (max-width: 900px) {
+.banner {
+  width: 100%;
+  height: 900px;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.0)), url(images/background_geospatial_mobile.png);
+  background-size: cover;
+  background-position: center;
+    }
+}
+
+@media (max-width: 400px) {
+.banner {
+  width: 100%;
+  height: 900px;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.0)), url(images/background_geospatial_mobile_small.png);
+  background-size: cover;
+  background-position: center;
+    }
+}*/
+@media (max-width: 300px) {
+.banner {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.0)), url(images/background_geospatial_mobile_small.png);
+  background-size: cover;
+  background-position: center;
+    }
+}
+
+/* Homepage Margin/Padding */
+
+.homepage{
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+}
+/* Hompage Container */
+.homepage_container{
+  width: 100%;
+  display: grid;
+  /* height: 500px; */
+  grid-template-columns: repeat(2, 1fr);
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.homepage_left{
+  grid-column: 1 / 2;
+}
+
+.homepage_right{
+  grid-column: 2 / 2;
+  margin-left: -200px;
+  margin-right: 20px;
+}
+
+.homepage_text_cont{
+  width: 100%;
+  margin: 20px;
+  margin-right: -100px;
+  padding: 20px;
+  background-color: #20272F;
+  opacity: 86%;
+  /* border-radius: 10px; */
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+  color: var(--lighttext);
+}
+
+.homepage_text{
+  color: var(--lighttext);
+  text-align: left;
+  font-family: 'Montserrat' sans-serif;
+  padding: 10px;
+  opacity: 100%;
+}
+
+.homepage_image{
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+/* Homepage Title */
+.homepage_title{
+  width: 100%;
+  position: relative;
+  top: 550px;
+  margin-left: 5%;
+  padding: 10px;
+  transform: translateY(-115%);
+  text-align: left;
+  /* font-family: sans-serif; */
+  font-size: 25px;
+  color: var(--lighttext);
+}
+@media (max-width: 900px) {
+  .homepage_title{
+    width: 100%;
+    position: relative;
+    top: 500px;
+    margin: 0%;
+    transform: translateY(-90%);
+    text-align: center;
+    /* font-family: sans-serif; */
+    font-size: 25px;
+    color: var(--lighttext);
+  }
+}
+@media (max-width: 400px) {
+  .homepage_title{
+    width: 100%;
+    position: relative;
+    top: 450px;
+    margin-left: 0%;
+    transform: translateY(-75%);
+    text-align: center;
+    /* font-family: sans-serif; */
+    font-size: 25px;
+    color: var(--lighttext);
+  }
+}
+
+/* Homepage Text */
+.homepage_txt{
+  padding-right: 50%;
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+  .homepage_txt{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media (max-width: 400px) {
+  .homepage_txt{
+    font-size: 20px;
+  }
+}
+
+/* About homepage new version */
+.about_cont{
+  display: grid;
+  /* height: 500px; */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-left{
+  grid-column: 1 / 2;
+}
+
+
+.about-right{
+  grid-column: 2 / 2;
+  padding: 40px;
+}
+
+.aboutpag1-text{
+  text-align: left;
+  max-width: 500px;
+  /* font-size: 0.1vw; */
+}
+
+.about-text{
+  text-align: left;
+  /* font-size: 0.1vw; */
+}
+
+.about-tablet-image{
+  height: auto;
+  width: 400px;
+  /* float: right; */
+  padding: 40px;
+  /* padding-left: 40px; */
+}
+@media (max-width: 500px) {
+.about-tablet-image {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+    }
+}
+
+.about_tablet_cont{
+  display: grid;
+  /* height: 500px; */
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+.about_tablet_cont {
+  margin: 1%;
+    }
+}
+
+.about-tablet-left{
+  grid-column: 1 / 1;
+  grid-row: 1 / 2;
+}
+
+
+.about-tablet-right{
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
+  /* padding: 40px; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+@media (max-width: 500px) {
+.about-tablet-right {
+  margin: 1%;
+    }
+}
+
+.about-tablet-text{
+  text-align: left;
+  /* font-size: 16px; */
+  /* font-size: 0.1vw; */
+}
+
+.about-image{
+  height: auto;
+  width: 400px;
+  float: right;
+  padding: 40px;
+  /* padding-left: 40px; */
+  margin-top: -10px;
+  margin-bottom: -10px;
+  border-right: 3px solid var(--darktext);
+}
+
+
+/* Bottom right text */
+.about-bottom-right-txt{
+  position: relative;
+  float: right;
+}
+/* Homepage container for about me section */
+.about_me_background{
+  background-color: var(--lightmain);
+}
+
+.about_me{
+  display: inline-flex;
+  background: #000;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin: 5%;
+  /* margin-left: 15%;
+  margin-right: 15%; */
+}
+
+@media (max-width: 1000px) {
+.about_me {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+.about_me {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5%;
+    }
+}
+
+/* About me section text container */
+.about_me_txt_cont{
+  /* margin-top: -2%;
+  margin-left: -10%;
+  margin-bottom: -2%; */
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  /* border: 2px solid var(--primary);
+  background-color: var(--primary); */
+  /* padding-left: 6%;
+  padding-bottom: 2.5%; */
+}
+
+@media (max-width: 1000px) {
+.about_me_txt_cont {
+  /* margin-top: -80px; */
+  margin-left: 0px;
+  margin-bottom: 0px;
+  /* border: 2px solid var(--primary);
+  background-color: var(--primary); */
+  /* padding: 10%; */
+    }
+}
+
+/* round about me image */
+.round {
+  width: 400px;
+  height: auto;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  image-resolution: 300dpi;
+  /* border-radius: 100%; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  /* padding: 3%; */
+}
+
+@media (max-width: 700px) {
+  .round{
+    width: 65%;
+    height: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .round{
+    width: 80%;
+    height: auto;
+  }
+}
+
+/* About me text for homepage section 1 */
+.about_me_txt{
+  /* margin-top: 60px; */
+  margin-left: 60px;
+  margin-right: 60px;
+  /* margin-bottom: 60px; */
+  position: relative;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  /* font-family: sans-serif; */
+  font-size: 20px;
+  /* background-color: var(--primary); */
+  color: var(--darktext);
+}
+
+
+/* Homepage section 2 container */
+.grid_background_col{
+  background-color: var(--lightmain);
+  padding: 2.5%;
+}
+
+/* Homepage section 2 container */
+.grid_background_col2{
+  background-color: var(--alternative);
+  padding: 2.5%;
+}
+
+/* Grid title text for homepage section 2 */
+.grid_title_txt{
+  /* margin: 2.5%; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* font-family: sans-serif; */
+  font-size: 20px;
+  color: var(--darktext);
+}
+
+/* Homepage section 2 container */
+.homepage_sect2_cont{
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+}
+
+/* Style for grid in homepage section 3 */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 100%;
+  max-width: 100%;
+}
+
+.column img {
+  vertical-align: middle;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%; /* width of container */
+  height: 200px; /* height of container */
+  object-fit: cover;
+  object-position: 20% 10%; /* try 20px 10px */
+}
+
+.post {
+  display: block;
+  width: 100%; /* width of container */
+  height: 800px; /* height of container */
+  object-fit: cover;
+  object-position: 20% 10%; /* try 20px 10px */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #000;
+}
+
+.container:hover .overlay {
+  opacity: 0.60;
+}
+
+.grid_text {
+  color: var(--lighttext);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  position: absolute;
+  opacity: 1.0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 480px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+}
+
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+    .column {
+      flex: 33.3%;
+      max-width: 33.3%;
+    }
+}
+
+/* Highlight Content Styling */
+.highlight_slide{
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; */
+  /* margin: 30px; */
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+}
+
+.highlight_cont{
+  display: grid;
+  /* height: 500px; */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .highlight_cont{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
+
+.highlight-left{
+  grid-column: 1 / 2;
+}
+
+@media (max-width: 1000px) {
+  .highlight-left{
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+  }
+}
+
+.highlight-right{
+  grid-column: 2 / 2;
+}
+
+@media (max-width: 1000px) {
+  .highlight-right{
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+  }
+}
+
+/* Title Font Size */
+@media (max-width: 1370px) {
+  .highlight-title{
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 1270px) {
+  .highlight-title{
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .highlight-title{
+    font-size: 28px;
+  }
+}
+
+/* Subtitle Font Size */
+@media (max-width: 1370px) {
+  .highlight-subtitle{
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1270px) {
+  .highlight-subtitle{
+    font-size: 18px;
+  }
+}
+
+/* Paragraph Font Size */
+@media (max-width: 1370px) {
+  .highlight-maintext{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1270px) {
+  .highlight-maintext{
+    font-size: 16px;
+  }
+}
+
+.highlight-text{
+  text-align: left;
+  /* font-size: 0.1vw; */
+}
+
+.highlight-image{
+  height: auto;
+  width: 100%;
+}
+
+/* Bottom right text */
+.highlight-bottom-right-txt{
+  position: relative;
+  float: right;
+}
+
+.exp_cont{
+  display: grid;
+  /* height: 500px; */
+  grid-template-columns: 2fr 1fr;
+  /* gap: 10px; */
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.exp-left{
+  grid-column: 1 / 2;
+
+}
+
+.exp-right{
+  grid-column: 2 / 2;
+}
+
+/* ---------------------------- About Me (Optional Page) Styling ---------------------------- */
+
+/* About Me Title */
+.about_me_title{
+  background-color: var(--alternative);
+  text-align: center;
+}
+
+/* About Me page Sections */
+.about_me_section1{
+  background-color: var(--main);
+  height: 600px;
+  /* animation-duration: 3s;
+  animation-name: slidein; */
+}
+/* @keyframes slidein {
+  from {
+    margin-left: 15%;
+    width: 120%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+} */
+
+/* About Me page Sections */
+.about_me_section2{
+  background-color: var(--main);
+  height: 600px;
+}
+
+/* About Me page Sections */
+.about_me_section3{
+  background-color: var(--main);
+  height: 500px;
+}
+/* About Me page Sections */
+.about_me_section4{
+  background-color: var(--main);
+  height: 600px;
+}
+/* Text for about me page */
+.about_me_text{
+  color: var(--darktext);
+  padding: 15px;
+  /* padding-left: 80px; */
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+@media (max-width: 450px) {
+  .about_me_text{
+    color: var(--darktext);
+    padding-top: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    position: relative;
+  }
+}
+
+/* Second page about me image */
+.me_image {
+  margin: 20px;
+  margin-top: 0px;
+  float: left;
+  width: 800px;
+  height: 400px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  image-resolution: 300dpi;
+  position: relative;
+  object-fit: cover;
+  object-position: center ;
+}
+
+@media (max-width: 1000px) {
+  .me_image{
+      margin: 0px;
+      margin-bottom: 20px;
+    float: none;
+    width: 100%;
+    /* object-position: -90px; */
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 700px) {
+  .me_image{
+    margin: 0px;
+    margin-bottom: 20px;
+      float: none;
+    width: 100%;
+    object-position: -90px;
+    object-fit: cover;
+  }
+}
+@media (max-width: 350px) {
+  .me_image{
+    margin: 0px;
+    margin-bottom: 20px;
+      float: none;
+    width: 100%;
+    object-position: -120px;
+    object-fit: cover;
+  }
+}
+
+/* Second page about research interests image */
+.research_image {
+  margin-top: -20px;
+  margin-left: -40px;
+  margin-bottom: -40px;
+  justify-content: center;
+  width: 550px;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* image-resolution: 300dpi; */
+  position: relative;
+  object-fit: cover;
+}
+
+/* @media (max-width: 1000px) {
+  .research_image{
+    width: 20vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .research_image{
+    width:400px;
+  }
+} */
+
+/* Second page about research interests image */
+.geo_image {
+  margin-top: -20px;
+  margin-left: -40px;
+  margin-bottom: -40px;
+  justify-content: center;
+  width: 600px;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* image-resolution: 300dpi; */
+  position: relative;
+  object-fit: cover;
+  object-position: right;
+}
+
+@media (max-width: 1000px) {
+  .geo_image{
+    /* width: 65%;
+    height: auto; */
+  }
+}
+
+@media (max-width: 600px) {
+  .geo_image{
+    /* width: 80%;
+    height: auto; */
+  }
+}
+/* About me center items side by side */
+.about_me_center{
+  width: 100%;
+  /* display: inline-flex;
+  justify-content: center; */
+}
+
+/* About me section 1 */
+.about_me_section1_cont{
+  background-color: var(--secondary);
+  float: right;
+  width: 90%;
+  height: 450px;
+  margin-top: 60px;
+  display: inline-flex;
+  justify-content: center;
+}
+/*
+@media (max-width: 600px) {
+  .about_me_section1_cont{
+    background-color: var(--primary);
+    float: none;
+    width: 90%;
+    height: 450px;
+    margin-top: 60px;
+    display: inline-flex;
+    justify-content: center;
+  }
+} */
+/* About me section 2 */
+.about_me_section2_cont{
+  background-color: var(--secondary);
+  float: left;
+  width: 90%;
+  height: 400px;
+  margin-top: 60px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+/* About me section 2 */
+.about_me_section3_cont{
+  background-color: var(--secondary);
+  float: right;
+  width: 90%;
+  height: 400px;
+  margin-top: 60px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+/* Tablet Containers */
+.about_me_section1_cont_tablet{
+  background-color: var(--secondary);
+  width: 100%;
+  height: 450px;
+  margin-top: 60px;
+  display: inline-flex;
+  justify-content: center;
+}
+/* About me section 1 Text */
+.about_me_section1_txt{
+  color: var(--lighttext);
+  width: 40%;
+  padding: 15px;
+  padding-left: 45px;
+  padding-right: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: normal;
+  background-color: var(--secondary); /*var(--primary);*/
+}
+
+
+.about_me_section2_txt{
+  color: var(--lighttext);
+  width: 40%;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 45px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: normal;
+  background-color: var(--secondary); /*var(--primary);*/
+}
+
+/* Homepage container for about me section */
+.about_me_background_pg2{
+  background-color: var(--alternative);
+}
+/* About Me container for about me section 1 */
+.about_me_pg2 {
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (max-width: 400px) {
+.about_me_pg2 {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+    }
+}
+
+/* About me section text container */
+.about_me_txt_cont_pg2{
+  background-color: var(--main);
+}
+
+/* About me text for homepage section 1 */
+.about_me_txt_pg2{
+  padding: 5%;
+  text-align: left;
+  /* font-family: sans-serif; */
+  font-size: 20px;
+  color: var(--lighttext);
+}
+
+/* About me background img */
+.about_me_txt_pg2_img{
+  object-position: center;
+  object-fit: fill;
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.0)), url(images/background_geospatial_clip.png);
+}
+
+/* About Me page 2 Interst Styling Section 2*/
+.about_me_interests_cont_pg2{
+  background-color: var(--secondary);
+  color: var(--lighttext);
+  width: 100%;
+  display: flex;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+}
+.about_me_interests_pg2{
+  border: 2px solid var(--secondary);
+  font-size: 20px;
+  display: grid;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+@media (max-width: 400px) {
+.about_me_interests_pg2 {
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+    }
+}
+
+/* About Me page 2 Featured Articles Styling Section 3*/
+.about_me_articles_cont_pg2{
+  /* background-color: var(--primary);
+  border: 2px solid var(--primary); */
+}
+.about_me_articles_pg2{
+  /* background-color: var(--secondary);
+  border: 2px solid var(--primary); */
+  /* margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%; */
+}
+@media (max-width: 400px) {
+.about_me_interests_pg2 {
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+    }
+}
+
+/* TABLET ABOUT ME SECTION */
+.tablet_about_me{
+  height: auto;
+  padding-top: 60px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-bottom: 60px;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+.tablet_about_me {
+  height: auto;
+  padding: 60px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+.tablet_about_me {
+  height: auto;
+  padding: 30px;
+  font-size: 20px;
+    }
+}
+
+.tablet_images {
+  margin: 0px;
+  width: 100%;
+  max-width: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: auto;
+  position: relative;
+  object-fit: cover;
+}
+
+.tablet_about_me_cont{
+  /* background-color: var(--accent); */
+  width: 100%;
+  height: auto;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.tablet_about_me_txt{
+  color: var(--darktext);
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  font-size: auto;
+  /* background-color: var(--accent); /*var(--primary);*/ */
+}
+
+/* --------- Multi-Page Styling: Resume, Web Maps, GIS portfolio ------------ */
+
+.result-image{
+  height: auto;
+  width: 500px;
+  /* float: right; */
+  /* padding: 40px; */
+  padding-right: 40px;
+  /* margin-top: -10px;
+  margin-bottom: -10px; */
+  border-right: 3px solid var(--darktext);
+}
+.project-image{
+  height: auto;
+  width: 100%;
+  /* float: right; */
+  /* padding: 40px; */
+  padding-right: 40px;
+  /* margin-top: -10px;
+  margin-bottom: -10px; */
+  border-right: 3px solid var(--darktext);
+}
+
+.table-image{
+  height: auto;
+  width: 200px;
+  padding: 20px;
+  justify-content: center;
+
+}
+
+@media (max-width: 500px) {
+.table-image {
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+    }
+}
+.project-tablet-image{
+  height: auto;
+  width: 100%;
+  /* float: right; */
+  /* padding: 40px; */
+  /* padding-left: 40px; */
+    border-right: 0px solid var(--darktext);
+}
+@media (max-width: 500px) {
+.project-tablet-image {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+    }
+}
+
+.project_tablet_cont{
+  display: grid;
+  /* height: 500px; */
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+.project_tablet_cont {
+  margin: 1%;
+    }
+}
+
+.project-tablet-left{
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
+}
+
+
+.project-tablet-right{
+  grid-column: 1 / 1;
+  grid-row: 1 / 2;
+  /* padding: 40px; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+@media (max-width: 500px) {
+.project-tablet-right {
+  margin: 1%;
+    }
+}
+
+.port_cont{
+  display: grid;
+  /* height: 500px; */
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@media (max-width: 1000px) {
+  .port_cont{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
+
+.port-left{
+  grid-column: 1 / 2;
+  padding: 10px;
+  padding-left: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-right: 3px solid var(--darktext);
+}
+
+@media (max-width: 1000px) {
+  .port-left{
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+    padding-left: 10px;
+      border-right: 0px solid var(--darktext);
+  }
+}
+
+.port-right{
+  grid-column: 2 / 2;
+}
+
+@media (max-width: 1000px) {
+  .port-right{
+    padding-top: 20px;
+    padding-bottom: 0px;
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+  }
+}
+/* Text container */
+.multi_cont{
+  background-color: var(--alternative);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* font-family: sans-serif; */
+  font-size: 20px;
+  color: var(--main);
+}
+
+/* Homepage container for about me section */
+.multi_background_pg{
+  background-color: var(--alternative);
+  border: 2px solid var(--alternative);
+}
+/* About Me container for about me section 1 */
+.multi_pg {
+  display: inline-block;
+  width: 100%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+.multi_pg {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+    }
+}
+
+
+/* Style for Web Maps and GIS Portfolio Desktop vs. Mobile */
+/* if desktop */
+  .tablet_device_1000px {
+      display: none;
+  }
+
+  /* if mobile device max width 480px */
+  @media only screen and (max-device-width: 1000px) {
+     .tablet_device_1000px{display: block;}
+     .desktop {display: none;}
+  }
+
+
+/* ----------------------------- Resume Styling ----------------------------- */
+.resume_txt{
+  margin-top: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* font-family: sans-serif; */
+  font-size: 20px;
+  color: var(--main);
+}
+
+.resume_map{
+  width: 100%;
+  height: 100%
+  /* height: 150px; */
+  border: none;
+  /* border-radius: 4px; */
+}
+
+.resume_timeline_container{
+  background-color: var(--main);
+  padding: 5vw;
+}
+/* ------------------- Web Mapping Portfolio Styling ------------------------ */
+.webmap_pg {
+  display: inline-block;
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.webmap_p_text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---------------------------- Timeline Styling ---------------------------- */
+.timeline_cont {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: var(--alternative);
+  /* font-family: Helvetica, sans-serif; */
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: var(--darktext);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timelinecontainer {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* The circles on the timeline */
+.timelinecontainer::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: var(--lighttext);
+  border: 4px solid var(--accent2);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.timelineleft {
+  left: 0;
+}
+
+/* Place the container to the right */
+.timelineright {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.timelineleft::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.timelineright::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.timelineright::after {
+  left: -16px;
+}
+
+/* The actual content */
+.timelinecontent {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+
+  /* Full-width containers */
+  .timelinecontainer {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timelinecontainer::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .timelineleft::after, .timelineright::after {
+  left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .timelineright {
+  left: 0%;
+  }
+}
+
+/* ------------------------ GIS Portfolio Styling --------------------------- */
+.gis_pg {
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ------------------------ GIS Portfolio Filter by Project Type Styling --------------------------- */
+/* .filterDiv {
+  display: none; /* Hidden by default */
+
+
+/* The "show" class is added to the filtered elements */
+/* .show {
+  display: flex;
+} */
+
+/* Style the buttons */
+/* .btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+/* .btn:hover {
+  background-color: #ddd;
+} */
+
+/* Add a dark background to the active button */
+/* .btn.active {
+  background-color: #666;
+  color: white;
+} */
+
+
+/* Add padding BETWEEN each column (if you want) */
+.portrow{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(70px, auto);
+  gap: 10px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .portrow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .portrow {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* Create three equal columns that floats next to each other */
+.portcolumn {
+  display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */
+.portrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.portcontent {
+  background-color: var(--secondary);
+  color: var(--lighttext);
+  padding: 15px;
+}
+
+/* The "show" class is added to the filtered elements */
+.portshow {
+  display: block;
+}
+
+/* Style the buttons */
+.portbtn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  color: var(--darktext);
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+/* Add a grey background color on mouse-over */
+.portbtn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background color to the active button */
+.portbtn.portactive {
+  background-color: #666;
+   color: white;
+}
+
+.portfolio_cont {
+  background-color: var(--alternative);
+  padding: 20px;
+  justify-content: center;
+  /* font-family: Arial; */
+}
+
+.port_txt{
+  text-decoration: none;
+  color: var(--ligthtext);
+}
+
+/* Portfolio Project Page */
+.project_cont{
+  margin: 20px;
+  height: auto;
+}
+
+.project_title{
+  float: right;
+  text-align: right;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .project_title {
+    float: none;
+    text-align: center;
+  }
+}
+
+/* .project_image_cont{
+  width: 100%;
+  height: 400px;
+  border-left: 100px solid red;
+  border-right: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-top: 100px solid transparent;
+} */
+.project_image{
+  /* height: 500px; */
+  width: 100%;
+  overflow: hidden;
+}
+
+.proj-info-cont{
+  padding-left:30px;
+  padding-right:30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .proj-info-cont {
+    padding:0px;
+  }
+}
+
+/* .box { */
+  /* width: 100vw;
+  height: 100vh; */
+  /* background-color: grey;
+}
+.box:after { */
+  /* content: open-quote; */
+  /* border-top: 100vh solid #dd4f39;
+  border-left: 100vw solid transparent;
+} */
+
+/* ---------------------- Footer and Social Media Icons / Embedded *//* ---------------- */
+/* Social Media */
+.social {
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+/* LinkedIn */
+.fa-linkedin {
+  background: #afb3b3;
+  color: white;
+  margin-left: 14px;
+}
+
+.embed_linkedin{
+  width: 500px;
+  height: 500px;
+}
+@media (max-width: 600px) {
+.embed_linkedin {
+  width: 200px;
+  height: 200px;
+    }
+}
+
+/* LinkedIn */
+.fa-github {
+  background: #afb3b3;
+  color: white;
+  margin-left: 8px;
+}
+
+.fa {
+  padding: 15px;
+  font-size: 15px;
+  width: 15px;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  position: relative;
+  bottom: 0px;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.fa:hover {
+  transform: scale(1.2);
+}
+
+.fa-linkedin:hover {
+  color: white;
+  opacity: 1.0;
+  transform: scale(1.2);
+}
+
+/* LinkedIn */
+.fa-github:hover {
+  color: white;
+  opacity: 1.0;
+  transform: scale(1.2);
+}
+
+.top_footer {
+  background-color:var(--main);
+  padding-top: 2.5%;
+  height: 20%;
+  width: 100%;
+  color: var(--lighttext);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+}
+
+.bottom_footer {
+  background-color:var(--main);
+  padding-bottom: 2.5%;
+  height: 30%;
+  width: 100%;
+  bottom: 0px;
+  color: #EAEAEC;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+/*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+  .table-style{
+    font-family: 'Montserrat', sans-serif;
+  }
+	@media
+	  only screen
+    and (max-width: 1000px), (min-device-width: 768px)
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+      font-family: 'Montserrat', sans-serif;
+      /* margin: 10%; */
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+
+    tr:nth-child(odd) {
+      background: var(--lightmain);
+    }
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 2.5px solid var(--alternative);
+			position: relative;
+			padding-left: 30%;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0px;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+
+		}
+    @media (max-width: 500px) {
+    td {
+			padding-left: 50%;
+        }
+    }
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(1):before { content: "Website Image"; }
+		td:nth-of-type(2):before { content: "Short Title"; }
+		td:nth-of-type(3):before { content: "Long Title"; }
+		td:nth-of-type(4):before { content: "Year"; }
+		td:nth-of-type(5):before { content: "Term"; }
+		td:nth-of-type(6):before { content: "Participants"; }
+		td:nth-of-type(7):before { content: "Advisors"; }
+		td:nth-of-type(8):before { content: "Project Page"; }
+	}
